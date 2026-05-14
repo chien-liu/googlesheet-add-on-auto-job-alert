@@ -1,0 +1,36 @@
+{
+  "name": "google-app-filter-jobs-from-linkedin",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/code.gs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "format": "prettier --write \"src/**/*.{gs,html,json}\"",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "src/**/*.{gs,html,json}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chien-liu/google-app-filter-jobs-from-linkedin.git"
+  },
+  "author": "chien-liu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chien-liu/google-app-filter-jobs-from-linkedin/issues"
+  },
+  "homepage": "https://github.com/chien-liu/google-app-filter-jobs-from-linkedin#readme",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.3"
+  }
+}
