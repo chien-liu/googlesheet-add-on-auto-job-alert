@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy — Job Alert Filter</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        max-width: 760px;
+        margin: 48px auto;
+        padding: 0 24px;
+        color: #1a1a2e;
+        line-height: 1.7;
+      }
+      h1 { font-size: 1.8rem; margin-bottom: 4px; }
+      h2 { font-size: 1.15rem; margin-top: 2rem; color: #1a73e8; }
+      p, li { font-size: 0.97rem; }
+      ul { padding-left: 1.4em; }
+      .updated { font-size: 0.85rem; color: #666; margin-bottom: 2rem; }
+      a { color: #1a73e8; }
+    </style>
+  </head>
+  <body>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: May 15th 2025</p>
+
+    <p>
+      <strong>Job Alert Filter</strong> is a Google Sheets add-on that reads job-alert emails from
+      Gmail and writes extracted job listings into your own Google Sheet. This page explains what
+      data the add-on accesses and how it is handled.
+    </p>
+
+    <h2>What data is accessed</h2>
+    <ul>
+      <li>
+        <strong>Gmail messages</strong> — the add-on searches your Gmail inbox for emails from two
+        specific job-alert senders:
+        <code>jobalerts-noreply@linkedin.com</code> (LinkedIn) and
+        <code>donotreply@jobalert.indeed.com</code> (Indeed). Only the HTML body of those emails is
+        read, solely to extract job title, company name, location, and a link to the job posting.
+        No other emails are accessed.
+      </li>
+      <li>
+        <strong>Google Sheet data</strong> — the add-on reads and writes only the active spreadsheet
+        to which it is installed. It creates two tabs ("LinkedIn Jobs" and "Indeed Jobs") and writes
+        the extracted job rows there.
+      </li>
+      <li>
+        <strong>Script Properties</strong> — keyword lists and preferences you configure in the
+        settings sidebar are stored in Apps Script Script Properties, which are scoped to your
+        script and accessible only to you.
+      </li>
+    </ul>
+
+    <h2>What data is NOT collected or shared</h2>
+    <ul>
+      <li>No data is transmitted to any external server or third party.</li>
+      <li>No data is stored outside your own Google account.</li>
+      <li>The add-on does not read, store, or process any email other than the two job-alert senders listed above.</li>
+      <li>The add-on does not collect any personally identifiable information.</li>
+    </ul>
+
+    <h2>Google API scopes used</h2>
+    <ul>
+      <li><code>gmail.readonly</code> — to search for and read job-alert emails from the two senders above.</li>
+      <li><code>spreadsheets.currentonly</code> — to write job listings into the active Google Sheet.</li>
+      <li><code>script.scriptapp</code> — to create the optional daily scan trigger.</li>
+      <li><code>script.storage</code> — to save your keyword preferences in Script Properties.</li>
+      <li><code>script.container.ui</code> — to display the menu and settings sidebar inside Google Sheets.</li>
+    </ul>
+
+    <h2>Data retention</h2>
+    <p>
+      All data (job rows in the Sheet, keyword preferences in Script Properties) remains entirely
+      within your Google account. You can delete it at any time by clearing the sheet tabs or
+      removing the Script Properties via the control panel UI.
+    </p>
+
+    <h2>Changes to this policy</h2>
+    <p>
+      If this policy changes materially, the "Last updated" date above will be revised. Continued
+      use of the add-on after changes constitutes acceptance of the updated policy.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      For questions or concerns, please open an issue on the
+      <a href="https://github.com/chien-liu/googlesheet-add-on-auto-job-alert" target="_blank">
+        GitHub repository</a>.
+    </p>
+  </body>
+</html>
