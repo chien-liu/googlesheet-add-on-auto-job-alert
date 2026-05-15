@@ -139,3 +139,11 @@ npm run lint         # run ESLint
 npm run format       # run Prettier on src/
 clasp push           # push code to Apps Script manually
 ```
+
+## Privacy
+
+This add-on reads Gmail messages only from the two known job-alert senders (`jobalerts-noreply@linkedin.com` and `donotreply@jobalert.indeed.com`) and writes the extracted job listings into your own Google Sheet.
+
+- **No data is transmitted to any external server.** All processing happens inside Google's infrastructure (Apps Script).
+- **No data is stored outside your Google account.** Job listings go into your Sheet; keyword preferences go into Script Properties — both owned by you.
+- The only Google API scopes used are `gmail.readonly` (to read job-alert emails), `spreadsheets.currentonly` (to write to the active Sheet), and the standard Apps Script scopes for triggers, storage, and UI.

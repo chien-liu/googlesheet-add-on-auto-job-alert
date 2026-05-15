@@ -1,4 +1,20 @@
 {
+  "addOns": {
+    "common": {
+      "name": "Job Alert Filter",
+      "logoUrl": "https://github.com/chien-liu/googlesheet-add-on-auto-job-alert/blob/main/assets/logo.png",
+      "homepageTrigger": {
+        "runFunction": "onHomepage",
+        "enabled": true
+      }
+    },
+    "sheets": {
+      "homepageTrigger": {
+        "runFunction": "onHomepage",
+        "enabled": true
+      }
+    }
+  },
   "timeZone": "Europe/Berlin",
   "dependencies": {},
   "exceptionLogging": "STACKDRIVER",
