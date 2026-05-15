@@ -10,6 +10,12 @@ function onOpen() {
       .addItem(t("menuSettings"), "openSettingsSidebar")
       .addItem(t("menuSwitchLang"), "switchLanguage")
       .addToUi();
+
+    // First-run: if no keywords have been saved yet, open the settings sidebar automatically.
+    var props = PropertiesService.getScriptProperties();
+    if (!props.getProperty("TITLE_KEYWORDS")) {
+      openSettingsSidebar();
+    }
   } catch (_e) {
     Logger.log(
       "This function is meant to create a custom menu in the Google Sheets UI. " +

@@ -6,6 +6,15 @@
 // opts: { sheetName, sender, parser, label }
 // ============================================================
 function scanEmailSource(ss, opts) {
+  try {
+    return _scanEmailSourceImpl(ss, opts);
+  } catch (e) {
+    Logger.log("ERROR in " + opts.label + " scan: " + e.message + "\n" + e.stack);
+    return 0;
+  }
+}
+
+function _scanEmailSourceImpl(ss, opts) {
   Logger.log("--- " + opts.label + " scan start ---");
   var settings = getSettings();
   var sheet = getOrCreateSheet(ss, opts.sheetName, JOB_ENTRY_HEADERS, "#1a73e8");
@@ -181,6 +190,14 @@ function parseIndeedEmail(htmlBody) {
       workType: workType,
       link: link,
     });
+  }
+
+  if (jobs.length === 0 && htmlBody && htmlBody.length > 500) {
+    Logger.log(
+      "WARNING: parseIndeedEmail returned 0 jobs from a non-empty email body (" +
+        htmlBody.length +
+        " chars). The email HTML structure may have changed."
+    );
   }
 
   return jobs;
