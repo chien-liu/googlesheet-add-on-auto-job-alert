@@ -55,6 +55,37 @@
       <div class="step"><span class="arrow">5.</span><span>Rows are sorted by application status, then by score — highest match first</span></div>
     </div>
 
+    <h2>Data Access &amp; Permissions</h2>
+    <p class="section-intro">Job Alert Filter requests the minimum Google account permissions needed to do its job. Below is every permission the app requests and the exact reason it needs it.</p>
+    <table class="permissions">
+      <thead>
+        <tr><th>Permission</th><th>Why the app needs it</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Read Gmail messages</strong></td>
+          <td>The app searches your inbox for job-alert emails sent by LinkedIn and Indeed. It reads only the emails that match those senders — it never accesses, stores, or transmits any other email.</td>
+        </tr>
+        <tr>
+          <td><strong>Edit the current Google Sheet</strong></td>
+          <td>Parsed job listings are written into the spreadsheet where the add-on is installed. The app cannot access any other spreadsheet in your Drive.</td>
+        </tr>
+        <tr>
+          <td><strong>Manage time-based triggers</strong></td>
+          <td>The optional daily auto-scan installs a single Apps Script trigger that runs the scan every morning at 07:00. You can remove this trigger at any time from the Apps Script dashboard.</td>
+        </tr>
+        <tr>
+          <td><strong>Store script properties</strong></td>
+          <td>Your keyword preferences and language setting are saved in Apps Script's ScriptProperties store — a key-value store private to this script. No data is sent to any external server.</td>
+        </tr>
+        <tr>
+          <td><strong>Show menus and sidebars</strong></td>
+          <td>The settings sidebar and the <em>Job Alert Filter</em> menu in Google Sheets require UI permission to render inside the Sheets interface.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="data-note">All processing runs entirely inside Google's infrastructure (Google Apps Script). No job data, email content, or personal information is ever sent to or stored on any external server.</p>
+
     <nav>
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
