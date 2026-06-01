@@ -4,48 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Job Alert Filter</title>
-    <style>
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        max-width: 760px;
-        margin: 60px auto;
-        padding: 0 24px;
-        color: #1a1a1a;
-        background: #fff;
-      }
-      h1 {
-        font-size: 1.8rem;
-        margin-bottom: 8px;
-      }
-      p {
-        color: #555;
-        margin-bottom: 32px;
-      }
-      nav {
-        display: flex;
-        gap: 16px;
-      }
-      nav a {
-        display: inline-block;
-        padding: 10px 20px;
-        border: 1px solid #d0d0d0;
-        border-radius: 6px;
-        text-decoration: none;
-        color: #1a1a1a;
-        font-size: 0.95rem;
-      }
-      nav a:hover {
-        background: #f5f5f5;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>Job Alert Filter</h1>
-    <p>A Google Sheets add-on that scans LinkedIn and Indeed job-alert emails and automatically organizes matching jobs into your Google Sheet.</p>
+    <p class="tagline">A Google Sheets add-on that scans LinkedIn and Indeed job-alert emails and automatically organizes matching jobs into your Google Sheet.</p>
+
+    <h2>Features</h2>
+    <ul class="features">
+      <li>
+        <strong>Automatic email scanning</strong>
+        Reads daily job-alert emails from LinkedIn and Indeed directly from your Gmail inbox.
+      </li>
+      <li>
+        <strong>Keyword scoring</strong>
+        Scores every listing by job title, industry domain, and location keywords — each match adds a point.
+      </li>
+      <li>
+        <strong>Work-type bonus</strong>
+        Remote roles get +2 pts, hybrid +1, so the jobs you actually want float to the top.
+      </li>
+      <li>
+        <strong>Deduplication</strong>
+        The same job is never added twice, even if it appears in multiple alert emails.
+      </li>
+      <li>
+        <strong>Application status tracking</strong>
+        Dropdown column (Not Applied → Applied → Pass) with color-coding lets you track every listing at a glance.
+      </li>
+      <li>
+        <strong>Daily auto-scan</strong>
+        A time-based Apps Script trigger runs the scan every morning at 07:00 — no manual action needed.
+      </li>
+      <li>
+        <strong>Bilingual UI</strong>
+        Switch between English and Chinese(中文) from the menu at any time.
+      </li>
+      <li>
+        <strong>Private by design</strong>
+        All processing happens inside Google's infrastructure. No data ever leaves your Google account.
+      </li>
+    </ul>
+
+    <h2>How it works</h2>
+    <div class="workflow">
+      <div class="step"><span class="arrow">1.</span><span>Gmail receives your daily LinkedIn / Indeed job-alert emails</span></div>
+      <div class="step"><span class="arrow">2.</span><span>The add-on parses each email to extract job title, company, location, and work type</span></div>
+      <div class="step"><span class="arrow">3.</span><span>Each listing is scored against your keyword preferences</span></div>
+      <div class="step"><span class="arrow">4.</span><span>New jobs are written into your Google Sheet (LinkedIn and Indeed on separate tabs)</span></div>
+      <div class="step"><span class="arrow">5.</span><span>Rows are sorted by application status, then by score — highest match first</span></div>
+    </div>
+
     <nav>
       <a href="privacy.html">Privacy Policy</a>
       <a href="terms.html">Terms of Service</a>
-      <a href="https://github.com/chien-liu/googlesheet-add-on-auto-job-alert">Source Code on Github</a>
+      <a href="https://github.com/chien-liu/googlesheet-add-on-auto-job-alert">Source Code on GitHub</a>
     </nav>
   </body>
 </html>
