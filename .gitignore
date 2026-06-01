@@ -27,6 +27,14 @@ coverage
 # Visual Studio Code configuration
 .vscode/
 
+# Terraform
+*.tfvars
+*.tfvars.json
+*.tfstate
+*.tfstate.backup
+terraform/.terraform/
+terraform/.terraform.lock.hcl
+
 # npm and yarn debug logs
 npm-debug.log*
 yarn-debug.log*
